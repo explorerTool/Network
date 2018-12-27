@@ -7,21 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C419FAD21D48D5100FB4B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C419FAC21D48D5100FB4B5A /* AppDelegate.swift */; };
-		8C419FAF21D48D5100FB4B5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C419FAE21D48D5100FB4B5A /* ViewController.swift */; };
-		8C419FB221D48D5100FB4B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C419FB021D48D5100FB4B5A /* Main.storyboard */; };
-		8C419FB421D48D5200FB4B5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C419FB321D48D5200FB4B5A /* Assets.xcassets */; };
-		8C419FB721D48D5200FB4B5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C419FB521D48D5200FB4B5A /* LaunchScreen.storyboard */; };
+		8C419FD021D48F3D00FB4B5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C419FC821D48F3D00FB4B5A /* Assets.xcassets */; };
+		8C419FD121D48F3D00FB4B5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C419FC921D48F3D00FB4B5A /* LaunchScreen.storyboard */; };
+		8C419FD221D48F3D00FB4B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C419FCB21D48F3D00FB4B5A /* Main.storyboard */; };
+		8C419FD621D48F7A00FB4B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C419FD421D48F7A00FB4B5A /* AppDelegate.swift */; };
+		8C419FD721D48F7A00FB4B5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C419FD521D48F7A00FB4B5A /* ViewController.swift */; };
+		8C419FDA21D4911A00FB4B5A /* TXJPCB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C419FD921D4911A00FB4B5A /* TXJPCB.swift */; };
+		8C419FDC21D4956500FB4B5A /* TXJNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C419FDB21D4956500FB4B5A /* TXJNetworkManager.swift */; };
+		8CA0F77021D4997700052CF4 /* TXJPCBQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0F76F21D4997700052CF4 /* TXJPCBQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8C419FA921D48D5100FB4B5A /* TXJNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TXJNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C419FAC21D48D5100FB4B5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C419FAE21D48D5100FB4B5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8C419FB121D48D5100FB4B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8C419FB321D48D5200FB4B5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8C419FB621D48D5200FB4B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8C419FB821D48D5200FB4B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C419FC021D48F3D00FB4B5A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C419FC821D48F3D00FB4B5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8C419FCA21D48F3D00FB4B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8C419FCC21D48F3D00FB4B5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8C419FD421D48F7A00FB4B5A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8C419FD521D48F7A00FB4B5A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8C419FD821D4903300FB4B5A /* TXJNetwork-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TXJNetwork-Bridging-Header.h"; sourceTree = "<group>"; };
+		8C419FD921D4911A00FB4B5A /* TXJPCB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TXJPCB.swift; sourceTree = "<group>"; };
+		8C419FDB21D4956500FB4B5A /* TXJNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TXJNetworkManager.swift; sourceTree = "<group>"; };
+		8CA0F76F21D4997700052CF4 /* TXJPCBQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TXJPCBQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +45,7 @@
 		8C419FA021D48D5100FB4B5A = {
 			isa = PBXGroup;
 			children = (
-				8C419FAB21D48D5100FB4B5A /* TXJNetwork */,
+				8C419FBE21D48F3D00FB4B5A /* TXJNetwork */,
 				8C419FAA21D48D5100FB4B5A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,17 +58,69 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8C419FAB21D48D5100FB4B5A /* TXJNetwork */ = {
+		8C419FBE21D48F3D00FB4B5A /* TXJNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				8C419FAC21D48D5100FB4B5A /* AppDelegate.swift */,
-				8C419FAE21D48D5100FB4B5A /* ViewController.swift */,
-				8C419FB021D48D5100FB4B5A /* Main.storyboard */,
-				8C419FB321D48D5200FB4B5A /* Assets.xcassets */,
-				8C419FB521D48D5200FB4B5A /* LaunchScreen.storyboard */,
-				8C419FB821D48D5200FB4B5A /* Info.plist */,
+				8C419FBF21D48F3D00FB4B5A /* Config */,
+				8C419FC121D48F3D00FB4B5A /* Classes */,
+				8C419FC721D48F3D00FB4B5A /* Resource */,
 			);
 			path = TXJNetwork;
+			sourceTree = "<group>";
+		};
+		8C419FBF21D48F3D00FB4B5A /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				8C419FD821D4903300FB4B5A /* TXJNetwork-Bridging-Header.h */,
+				8C419FC021D48F3D00FB4B5A /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		8C419FC121D48F3D00FB4B5A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8C419FC321D48F3D00FB4B5A /* Kit */,
+				8C419FC521D48F3D00FB4B5A /* BLs */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8C419FC321D48F3D00FB4B5A /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+				8C419FC421D48F3D00FB4B5A /* Network */,
+			);
+			path = Kit;
+			sourceTree = "<group>";
+		};
+		8C419FC421D48F3D00FB4B5A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8C419FD921D4911A00FB4B5A /* TXJPCB.swift */,
+				8C419FDB21D4956500FB4B5A /* TXJNetworkManager.swift */,
+				8CA0F76F21D4997700052CF4 /* TXJPCBQueue.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8C419FC521D48F3D00FB4B5A /* BLs */ = {
+			isa = PBXGroup;
+			children = (
+				8C419FD421D48F7A00FB4B5A /* AppDelegate.swift */,
+				8C419FD521D48F7A00FB4B5A /* ViewController.swift */,
+			);
+			path = BLs;
+			sourceTree = "<group>";
+		};
+		8C419FC721D48F3D00FB4B5A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8C419FC821D48F3D00FB4B5A /* Assets.xcassets */,
+				8C419FC921D48F3D00FB4B5A /* LaunchScreen.storyboard */,
+				8C419FCB21D48F3D00FB4B5A /* Main.storyboard */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +155,7 @@
 				TargetAttributes = {
 					8C419FA821D48D5100FB4B5A = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -122,9 +182,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C419FB721D48D5200FB4B5A /* LaunchScreen.storyboard in Resources */,
-				8C419FB421D48D5200FB4B5A /* Assets.xcassets in Resources */,
-				8C419FB221D48D5100FB4B5A /* Main.storyboard in Resources */,
+				8C419FD121D48F3D00FB4B5A /* LaunchScreen.storyboard in Resources */,
+				8C419FD021D48F3D00FB4B5A /* Assets.xcassets in Resources */,
+				8C419FD221D48F3D00FB4B5A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,28 +195,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C419FAF21D48D5100FB4B5A /* ViewController.swift in Sources */,
-				8C419FAD21D48D5100FB4B5A /* AppDelegate.swift in Sources */,
+				8C419FD721D48F7A00FB4B5A /* ViewController.swift in Sources */,
+				8C419FDC21D4956500FB4B5A /* TXJNetworkManager.swift in Sources */,
+				8C419FDA21D4911A00FB4B5A /* TXJPCB.swift in Sources */,
+				8C419FD621D48F7A00FB4B5A /* AppDelegate.swift in Sources */,
+				8CA0F77021D4997700052CF4 /* TXJPCBQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8C419FB021D48D5100FB4B5A /* Main.storyboard */ = {
+		8C419FC921D48F3D00FB4B5A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8C419FB121D48D5100FB4B5A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8C419FB521D48D5200FB4B5A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8C419FB621D48D5200FB4B5A /* Base */,
+				8C419FCA21D48F3D00FB4B5A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8C419FCB21D48F3D00FB4B5A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8C419FCC21D48F3D00FB4B5A /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -282,14 +345,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TXJNetwork/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TXJNetwork/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.txj.TXJNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TXJNetwork/Config/TXJNetwork-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -299,14 +365,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TXJNetwork/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TXJNetwork/Config/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.txj.TXJNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TXJNetwork/Config/TXJNetwork-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
