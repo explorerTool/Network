@@ -9,6 +9,11 @@
 import UIKit
 import Alamofire
 
+/**
+ * 登录失效规则 由用户确定
+ * 其他失效规则 由用户确定
+ * 网络失效规则 由网络框架确定
+ */
 protocol TXJNetworkManagerDelegate : NSObjectProtocol {
     func ruleLoginFailure(response: Dictionary<String, Any>) -> Bool
     func ruleFailure(response: Dictionary<String, Any>) -> Bool
@@ -33,6 +38,8 @@ class TXJNetworkManager: NSObject {
         }
 
     }
+    
+    var delegate: TXJNetworkManagerDelegate?
     
     //MARK: - public methods
     /**
@@ -98,6 +105,12 @@ class TXJNetworkManager: NSObject {
      * get方式请求
      */
     private func getLoadPCB(pcb: TXJPCB) {
+        /**
+         * 1. 调用网络请求类
+         * 2. 成功
+         * 3. 失败 根据失败原因分别调用不同的失效方法 添加到队列中
+         */
+        
         // 正在处理
         pcb.state = 2
         Alamofire.request(pcb.URL).response { (response) in
@@ -114,6 +127,12 @@ class TXJNetworkManager: NSObject {
     private func postLoadPCB(pcb: TXJPCB) {
         // 正在处理
         pcb.state = 2
+        
+        /**
+         * 1. 调用网络请求类
+         * 2. 成功
+         * 3. 失败 根据失败原因分别调用不同的失效方法 添加到队列中
+         */
     }
     
     /**
@@ -122,6 +141,12 @@ class TXJNetworkManager: NSObject {
     private func uploadPCB(pcb: TXJUploadPCB) {
         // 正在处理
         pcb.state = 2
+        
+        /**
+         * 1. 调用网络请求类
+         * 2. 成功
+         * 3. 失败 根据失败原因分别调用不同的失效方法 添加到队列中
+         */
     }
     
     /**
