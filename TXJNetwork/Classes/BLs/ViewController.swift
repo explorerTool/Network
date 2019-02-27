@@ -16,12 +16,10 @@ class ViewController: UIViewController {
 
         
         
-        let pcb = TXJPCB()
-        pcb.URL = "http://10.10.1.32:17100/front-api/goods/phone/template/appHomeList"
-        pcb.methodType = .get
-        TXJNetworkManager.sharedInstance.load(pcb: pcb)
+        let req = TXJRequest(methodType: .get, url: "http://10.10.1.32:17100/front-api/goods/phone/template/appHomeList", parameters: nil)
+        TXJNetworkManager.sharedInstance.load(req: req)
         
-        pcb.responseData = {(response) in
+        req.responseDict = {(response) in
          
             print(response)
         }

@@ -51,27 +51,27 @@ class TXJNetworkManager: NSObject {
     /**
      *  加载处理块
      */
-    func load(pcb: TXJPCB) {
+    func load(req: TXJRequest) {
         
         // 待处理
-        pcb.state = 1 //预留一个状态
+        req.state = 1 //预留一个状态
         
         /**
          * 判断是否是上传
          * 若不是上传，判断请求类型
          */
-        if pcb.isKind(of: TXJUploadPCB.self) {
+        if req.isKind(of: TXJUploadRequest.self) {
             
-            uploadPCB(pcb: pcb as! TXJUploadPCB)
+            uploadReq(req: req as! TXJUploadRequest)
             
         } else {
             
-            switch pcb.methodType {
+            switch req.methodType {
             case .get:
-                getLoadPCB(pcb: pcb)
+                loadReqGet(req: req)
                 
             case .post:
-                postLoadPCB(pcb: pcb)
+                loadReqPost(req: req)
             }
             
         }
@@ -83,8 +83,8 @@ class TXJNetworkManager: NSObject {
      */
     func onceAgainFailureLoad() {
         
-        for itemPCB in failureQueue.get() {
-            load(pcb: itemPCB)
+        for itemReq in failureQueue.get() {
+            load(req: itemReq)
         }
         failureQueue.removeAll()
         
@@ -92,16 +92,16 @@ class TXJNetworkManager: NSObject {
     
     func onceAgainLoginFailureLoad() {
         
-        for itemPCB in loginFailureQueue.get() {
-            load(pcb: itemPCB)
+        for itemReq in loginFailureQueue.get() {
+            load(req: itemReq)
         }
         loginFailureQueue.removeAll()
         
     }
     
     func onceAgainNetworkFailureLoad() {
-        for itemPCB in networkFailureQueue.get() {
-            load(pcb: itemPCB)
+        for itemReq in networkFailureQueue.get() {
+            load(req: itemReq)
         }
         networkFailureQueue.removeAll()
     }
@@ -110,7 +110,7 @@ class TXJNetworkManager: NSObject {
     /**
      * get方式请求
      */
-    private func getLoadPCB(pcb: TXJPCB) {
+    private func loadReqGet(req: TXJRequest) {
         /**
          * 1. 调用网络请求类
          * 2. 成功
@@ -118,10 +118,11 @@ class TXJNetworkManager: NSObject {
          */
         
         // 正在处理
-        pcb.state = 2
-        Alamofire.request(pcb.URL).response { (response) in
+        req.state = 2
+        
+        Alamofire.request(req.URL).response { (response) in
             print(response)
-            pcb.responseData?(["String":"string"])
+            req.responseDict?(["String":"string"])
             
         }
     
@@ -130,9 +131,9 @@ class TXJNetworkManager: NSObject {
     /**
      * post方式请求
      */
-    private func postLoadPCB(pcb: TXJPCB) {
+    private func loadReqPost(req: TXJRequest) {
         // 正在处理
-        pcb.state = 2
+        req.state = 2
         
         /**
          * 1. 调用网络请求类
@@ -144,9 +145,9 @@ class TXJNetworkManager: NSObject {
     /**
      * 上传图片 or 视频
      */
-    private func uploadPCB(pcb: TXJUploadPCB) {
+    private func uploadReq(req: TXJUploadRequest) {
         // 正在处理
-        pcb.state = 2
+        req.state = 2
         
         /**
          * 1. 调用网络请求类
@@ -158,15 +159,15 @@ class TXJNetworkManager: NSObject {
     /**
      * 添加因为登录失效也就是没有权限到队列中 做二次请求用
      */
-    private func addLoginFailureQueue(pcb: TXJPCB) {
+    private func addLoginFailureQueue(req: TXJRequest) {
         
-        cumulativeCounter(pcb: pcb, queue: loginFailureQueue)
+        cumulativeCounter(req: req, queue: loginFailureQueue)
         
         /**
          * 状态为待处理的才能加入队列中
          */
-        if pcb.counter == 1 {
-            loginFailureQueue.push(pcb: pcb)
+        if req.counter == 1 {
+            loginFailureQueue.push(req: req)
         }
         
         
@@ -175,41 +176,41 @@ class TXJNetworkManager: NSObject {
     /**
      * 添加因其他原因请求失效到队列中 做二次请求使用
      */
-    private func addFailureQueue(pcb: TXJPCB) {
-        cumulativeCounter(pcb: pcb, queue: failureQueue)
+    private func addFailureQueue(req: TXJRequest) {
+        cumulativeCounter(req: req, queue: failureQueue)
         /**
          * 状态为待处理的才能加入队列中
          */
-        if pcb.counter == 1 {
-            failureQueue.push(pcb: pcb)
+        if req.counter == 1 {
+            failureQueue.push(req: req)
         }
     }
     
     /**
      * 添加因网络原因请求失效的对象到队列中 做二次请求使用
      */
-    private func addNetworkFailureQueue(pcb: TXJPCB) {
-        cumulativeCounter(pcb: pcb, queue: networkFailureQueue)
+    private func addNetworkFailureQueue(req: TXJRequest) {
+        cumulativeCounter(req: req, queue: networkFailureQueue)
         /**
          * 状态为待处理的才能加入队列中
          */
-        if pcb.counter == 1 {
-            networkFailureQueue.push(pcb: pcb)
+        if req.counter == 1 {
+            networkFailureQueue.push(req: req)
         }
     }
     
-    private func cumulativeCounter(pcb: TXJPCB, queue: TXJPCBQueue<TXJPCB>) {
+    private func cumulativeCounter(req: TXJRequest, queue: TXJReqQueue) {
         /**
          * 查找pcb是否包含在队列中
          */
         // 获取索引 若没有则返回-1
-        let index = queue.find { (PCB) -> Bool in
-            return PCB.URL == pcb.URL
+        let index = queue.find { (REQ) -> Bool in
+            return REQ.URL == req.URL
         }
         
         //尝试获取PCB 若有则说明 待添加的pcb已在队列中，获取该pcb的counter 类加然后重新添加到队列末尾
-        if let PCB = queue.get(at: index) {
-            pcb.counter += PCB.counter
+        if let REQ = queue.get(at: index) {
+            req.counter += REQ.counter
             queue.remove(at: index)
         }
     }
@@ -217,25 +218,25 @@ class TXJNetworkManager: NSObject {
     
     //MARK: private
     // 登录失效
-    private lazy var loginFailureQueue: TXJPCBQueue<TXJPCB> = {
+    private lazy var loginFailureQueue: TXJReqQueue = {
         
-        let _loginFailureQueue = TXJPCBQueue<TXJPCB>()
+        let _loginFailureQueue = TXJReqQueue()
         return _loginFailureQueue
         
     }()
     
     // 其他原因失效
-    private lazy var failureQueue: TXJPCBQueue<TXJPCB> = {
+    private lazy var failureQueue: TXJReqQueue = {
         
-        let _failureQueue = TXJPCBQueue<TXJPCB>()
+        let _failureQueue = TXJReqQueue()
         return _failureQueue
         
     }()
     
     // 网络原因失效
-    private lazy var networkFailureQueue: TXJPCBQueue<TXJPCB> = {
+    private lazy var networkFailureQueue: TXJReqQueue = {
         
-        let _networkFailureQueue = TXJPCBQueue<TXJPCB>()
+        let _networkFailureQueue = TXJReqQueue()
         return _networkFailureQueue
         
     }()

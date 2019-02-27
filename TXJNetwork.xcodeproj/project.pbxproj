@@ -12,9 +12,8 @@
 		8C419FD221D48F3D00FB4B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C419FCB21D48F3D00FB4B5A /* Main.storyboard */; };
 		8C419FD621D48F7A00FB4B5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C419FD421D48F7A00FB4B5A /* AppDelegate.swift */; };
 		8C419FD721D48F7A00FB4B5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C419FD521D48F7A00FB4B5A /* ViewController.swift */; };
-		8C419FDA21D4911A00FB4B5A /* TXJPCB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C419FD921D4911A00FB4B5A /* TXJPCB.swift */; };
+		8C419FDA21D4911A00FB4B5A /* TXJRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C419FD921D4911A00FB4B5A /* TXJRequest.swift */; };
 		8C419FDC21D4956500FB4B5A /* TXJNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C419FDB21D4956500FB4B5A /* TXJNetworkManager.swift */; };
-		8CA0F77021D4997700052CF4 /* TXJPCBQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA0F76F21D4997700052CF4 /* TXJPCBQueue.swift */; };
 		B0D69E5471004FC3CDAD35DA /* Pods_TXJNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA10F0AE4E5D1AD183C5D00 /* Pods_TXJNetwork.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,9 +26,8 @@
 		8C419FD421D48F7A00FB4B5A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8C419FD521D48F7A00FB4B5A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8C419FD821D4903300FB4B5A /* TXJNetwork-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TXJNetwork-Bridging-Header.h"; sourceTree = "<group>"; };
-		8C419FD921D4911A00FB4B5A /* TXJPCB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TXJPCB.swift; sourceTree = "<group>"; };
+		8C419FD921D4911A00FB4B5A /* TXJRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TXJRequest.swift; sourceTree = "<group>"; };
 		8C419FDB21D4956500FB4B5A /* TXJNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TXJNetworkManager.swift; sourceTree = "<group>"; };
-		8CA0F76F21D4997700052CF4 /* TXJPCBQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TXJPCBQueue.swift; sourceTree = "<group>"; };
 		DCD4A25905785144F14B8C5A /* Pods-TXJNetwork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TXJNetwork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TXJNetwork/Pods-TXJNetwork.debug.xcconfig"; sourceTree = "<group>"; };
 		DEA10F0AE4E5D1AD183C5D00 /* Pods_TXJNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TXJNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBBF1E44006A0668046B71F6 /* Pods-TXJNetwork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TXJNetwork.release.xcconfig"; path = "Pods/Target Support Files/Pods-TXJNetwork/Pods-TXJNetwork.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,9 +119,8 @@
 		8C419FC421D48F3D00FB4B5A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				8C419FD921D4911A00FB4B5A /* TXJPCB.swift */,
+				8C419FD921D4911A00FB4B5A /* TXJRequest.swift */,
 				8C419FDB21D4956500FB4B5A /* TXJNetworkManager.swift */,
-				8CA0F76F21D4997700052CF4 /* TXJPCBQueue.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -270,9 +267,8 @@
 			files = (
 				8C419FD721D48F7A00FB4B5A /* ViewController.swift in Sources */,
 				8C419FDC21D4956500FB4B5A /* TXJNetworkManager.swift in Sources */,
-				8C419FDA21D4911A00FB4B5A /* TXJPCB.swift in Sources */,
+				8C419FDA21D4911A00FB4B5A /* TXJRequest.swift in Sources */,
 				8C419FD621D48F7A00FB4B5A /* AppDelegate.swift in Sources */,
-				8CA0F77021D4997700052CF4 /* TXJPCBQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
